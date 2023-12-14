@@ -9,9 +9,25 @@
 <script lang="ts">
 import { Vue } from 'vue-class-component';
 import firebase from 'firebase/compat/app';
-import 'firebase/compat/auth';
-import 'firebase/compat/firestore';
+import 'firebase/auth';
+import 'firebase/firestore';
+import { initializeApp } from "firebase/app"
 
+
+const firebaseConfig = {
+  apiKey: "AIzaSyC3X9I5T6gEvZnJa6UYz6E26acxDn-ED4M",
+  authDomain: "hamsters-af226.firebaseapp.com",
+  databaseURL: "https://hamsters-af226-default-rtdb.asia-southeast1.firebasedatabase.app",
+  projectId: "hamsters-af226",
+  storageBucket: "hamsters-af226.appspot.com",
+  messagingSenderId: "938935418439",
+  appId: "1:938935418439:web:2a67929fdea559e9a7fb62",
+  measurementId: "G-WYMBRJZ24K"
+};
+
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+var db = firebase.firestore()
 
 export default class Register extends Vue {
     email = "";
